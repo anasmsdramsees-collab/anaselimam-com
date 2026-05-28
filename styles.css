@@ -452,6 +452,37 @@ body {
   font-style: normal;
 }
 
+/* Black handwritten signature at the end of each essay */
+.essay-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.essay-signature img {
+  display: block;
+  width: 220px;
+  max-width: 70%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.essay-end-location {
+  display: block;
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.65rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-top: 4px;
+}
+
+@media (max-width: 720px) {
+  .essay-signature img { width: 180px; }
+}
+
 /* ─── Page header (for notes index, about, contact) ─────── */
 .page-header {
   text-align: center;
