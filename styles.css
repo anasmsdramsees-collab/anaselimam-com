@@ -149,13 +149,15 @@ body {
 .hero-signature {
   margin-bottom: 28px;
   line-height: 1;
+  text-align: center;
+  font-size: 0;
 }
 
 .hero-signature img {
-  max-width: min(620px, 80vw);
-  width: 100%;
-  height: auto;
-  display: block;
+  display: inline-block !important;
+  width: clamp(260px, 42vw, 440px) !important;
+  height: auto !important;
+  max-width: 90%;
   margin: 0 auto;
 }
 
