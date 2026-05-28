@@ -238,8 +238,6 @@ body {
   width: 100%;
   max-width: 240px;
   height: auto;
-  aspect-ratio: 3 / 4;
-  object-fit: cover;
   display: block;
   filter: saturate(0.92) contrast(1.02);
 }
