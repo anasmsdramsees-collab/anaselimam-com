@@ -146,6 +146,19 @@ body {
   margin-bottom: 24px;
 }
 
+.hero-signature {
+  margin-bottom: 28px;
+  line-height: 1;
+}
+
+.hero-signature img {
+  max-width: min(620px, 80vw);
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
 .hero-rule {
   width: 56px;
   height: 1px;
