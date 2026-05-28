@@ -218,8 +218,43 @@ body {
   margin-bottom: 28px;
 }
 
-/* ─── Bio prose ──────────────────────────────────────────── */
-.bio p {
+/* ─── Bio: editorial spread (portrait + prose) ──────────── */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr;
+  gap: 64px;
+  align-items: start;
+}
+
+.bio-portrait {
+  margin: 0;
+}
+
+.bio-portrait img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  filter: saturate(0.92) contrast(1.02);
+}
+
+.bio-portrait figcaption {
+  margin-top: 14px;
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-align: center;
+}
+
+.bio-text {
+  padding-top: 8px;
+}
+
+.bio-text p {
   font-family: var(--serif-body);
   font-size: 1.2rem;
   line-height: 1.7;
@@ -227,14 +262,14 @@ body {
   color: var(--ink);
 }
 
-.bio p:first-of-type::first-letter {
+.bio-text p:first-of-type::first-letter {
   font-family: var(--serif-display);
   font-size: 3.4rem;
   float: left;
   line-height: 0.88;
   padding-right: 10px;
   padding-top: 6px;
-  color: var(--navy);
+  color: var(--burgundy);
   font-weight: 500;
 }
 
@@ -632,6 +667,13 @@ body {
   .hero-tagline { font-size: 1.1rem; }
 
   .section { padding: 56px 0; }
+
+  .bio-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .bio-portrait img { max-width: 320px; margin: 0 auto; }
+  .bio-portrait figcaption { text-align: center; }
 
   .currently-list li {
     grid-template-columns: 1fr;
