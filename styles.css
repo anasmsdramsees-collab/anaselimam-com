@@ -1,0 +1,599 @@
+/* ============================================================
+   ANAS ELIMAM — Personal Site
+   Old Money aesthetic. FT Weekend × Aman Resorts.
+   ============================================================ */
+
+/* ─── Fonts ──────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── Tokens ─────────────────────────────────────────────── */
+:root {
+  /* Palette — Old Money */
+  --bone:       #FAF8F3;   /* page bg */
+  --paper:     #F3EFE6;    /* card bg */
+  --charcoal:  #1A1A1A;    /* primary text */
+  --ink:       #2A2622;    /* body text — slightly warm black */
+  --navy:      #0A1628;    /* headings */
+  --burgundy:  #722F37;    /* signature accent */
+  --burgundy-deep: #5A1E26;
+  --stone:     #A8A29E;    /* metadata, dividers */
+  --stone-light: #D6D2CB;  /* hairlines */
+
+  /* Type */
+  --serif-display: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --serif-body: 'EB Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing */
+  --measure: 64ch;  /* reading line length */
+}
+
+/* ─── Reset ──────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--serif-body);
+  font-size: 1.1rem;
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ─── Layout ─────────────────────────────────────────────── */
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.container--wide {
+  max-width: 1080px;
+}
+
+/* ─── Masthead (nav at top — magazine style) ─────────────── */
+.masthead {
+  border-bottom: 1px solid var(--stone-light);
+  padding: 28px 0 24px;
+  background: var(--bone);
+}
+
+.masthead-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.masthead-name {
+  font-family: var(--serif-display);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.masthead-name em {
+  font-style: italic;
+  color: var(--burgundy);
+}
+
+.masthead-nav {
+  display: flex;
+  gap: 36px;
+  list-style: none;
+}
+
+.masthead-nav a {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.25s ease;
+  padding-bottom: 2px;
+  border-bottom: 1px solid transparent;
+}
+
+.masthead-nav a:hover {
+  color: var(--burgundy);
+  border-bottom-color: var(--burgundy);
+}
+
+.masthead-nav a.is-active {
+  color: var(--burgundy);
+}
+
+/* ─── Hero (homepage opener) ─────────────────────────────── */
+.hero {
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 32px;
+}
+
+.hero-name {
+  font-family: var(--serif-display);
+  font-size: clamp(3.6rem, 9vw, 6.4rem);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+.hero-rule {
+  width: 56px;
+  height: 1px;
+  background: var(--burgundy);
+  margin: 0 auto 28px;
+}
+
+.hero-tagline {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--ink);
+  line-height: 1.5;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.hero-tagline span {
+  display: block;
+}
+
+/* ─── Section base ───────────────────────────────────────── */
+.section {
+  padding: 72px 0;
+}
+
+.section + .section {
+  padding-top: 0;
+}
+
+.section-label {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 28px;
+  display: inline-block;
+}
+
+.section-rule {
+  width: 24px;
+  height: 1px;
+  background: var(--stone);
+  margin-bottom: 28px;
+}
+
+/* ─── Bio prose ──────────────────────────────────────────── */
+.bio p {
+  font-family: var(--serif-body);
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--ink);
+}
+
+.bio p:first-of-type::first-letter {
+  font-family: var(--serif-display);
+  font-size: 3.4rem;
+  float: left;
+  line-height: 0.88;
+  padding-right: 10px;
+  padding-top: 6px;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+/* ─── Currently section ──────────────────────────────────── */
+.currently-list {
+  list-style: none;
+  padding: 0;
+}
+
+.currently-list li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--stone-light);
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 32px;
+  align-items: baseline;
+}
+
+.currently-list li:last-child {
+  border-bottom: none;
+}
+
+.currently-name {
+  font-family: var(--serif-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--burgundy);
+}
+
+.currently-desc {
+  font-family: var(--serif-body);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+/* ─── Notes (blog) preview list ──────────────────────────── */
+.notes-list {
+  list-style: none;
+  padding: 0;
+}
+
+.notes-list li {
+  border-bottom: 1px solid var(--stone-light);
+}
+
+.notes-list li:last-child {
+  border-bottom: none;
+}
+
+.note-link {
+  display: block;
+  padding: 28px 0;
+  text-decoration: none;
+  color: inherit;
+  transition: padding 0.25s ease;
+}
+
+.note-link:hover {
+  padding-left: 12px;
+}
+
+.note-title {
+  font-family: var(--serif-display);
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 8px;
+  letter-spacing: -0.005em;
+}
+
+.note-link:hover .note-title {
+  color: var(--burgundy);
+}
+
+.note-meta {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 10px;
+}
+
+.note-excerpt {
+  font-family: var(--serif-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--ink);
+  max-width: 60ch;
+}
+
+/* ─── Essay (individual blog post) ───────────────────────── */
+.essay {
+  padding: 80px 0 100px;
+}
+
+.essay-header {
+  text-align: center;
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--stone-light);
+  padding-bottom: 48px;
+}
+
+.essay-cat {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 24px;
+  display: inline-block;
+}
+
+.essay-title {
+  font-family: var(--serif-display);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+.essay-meta {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.essay-body {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.essay-body p {
+  font-family: var(--serif-body);
+  font-size: 1.15rem;
+  line-height: 1.75;
+  color: var(--ink);
+  margin-bottom: 22px;
+}
+
+.essay-body p:first-of-type::first-letter {
+  font-family: var(--serif-display);
+  font-size: 3.8rem;
+  float: left;
+  line-height: 0.88;
+  padding-right: 10px;
+  padding-top: 6px;
+  color: var(--burgundy);
+  font-weight: 500;
+}
+
+.essay-body h2 {
+  font-family: var(--serif-display);
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  margin: 48px 0 18px;
+  line-height: 1.25;
+}
+
+.essay-body blockquote {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--burgundy);
+  border-left: 2px solid var(--burgundy);
+  padding-left: 24px;
+  margin: 36px 0;
+  font-weight: 500;
+}
+
+.essay-body a {
+  color: var(--burgundy);
+  text-decoration: none;
+  border-bottom: 1px solid var(--burgundy);
+  padding-bottom: 1px;
+  transition: opacity 0.2s ease;
+}
+
+.essay-body a:hover {
+  opacity: 0.7;
+}
+
+.essay-end {
+  text-align: center;
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--stone-light);
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--stone);
+  letter-spacing: 0.1em;
+}
+
+.essay-end::before {
+  content: "❦";
+  display: block;
+  font-size: 1.4rem;
+  color: var(--burgundy);
+  margin-bottom: 16px;
+  font-style: normal;
+}
+
+/* ─── Page header (for notes index, about, contact) ─────── */
+.page-header {
+  text-align: center;
+  padding: 80px 0 48px;
+  border-bottom: 1px solid var(--stone-light);
+  margin-bottom: 56px;
+}
+
+.page-eyebrow {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--burgundy);
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-family: var(--serif-display);
+  font-size: clamp(2.8rem, 6vw, 4.4rem);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.page-subtitle {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--stone);
+  margin-top: 16px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ─── Contact (homepage card) ────────────────────────────── */
+.contact {
+  text-align: center;
+  padding: 72px 0;
+}
+
+.contact p {
+  font-family: var(--serif-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.contact-links a {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--burgundy);
+  transition: color 0.25s ease;
+}
+
+.contact-links a:hover {
+  color: var(--burgundy);
+}
+
+/* ─── Footer (subtle, magazine colophon) ─────────────────── */
+.colophon {
+  border-top: 1px solid var(--stone-light);
+  padding: 40px 0 36px;
+  text-align: center;
+}
+
+.colophon-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.colophon-monogram {
+  font-family: var(--serif-display);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--burgundy);
+  letter-spacing: 0.04em;
+}
+
+.colophon-meta {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.colophon-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+}
+
+.colophon-links a {
+  font-family: var(--sans);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.colophon-links a:hover {
+  color: var(--burgundy);
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 720px) {
+  html { font-size: 17px; }
+
+  .masthead { padding: 20px 0 18px; }
+  .masthead-inner { padding: 0 24px; flex-direction: column; gap: 14px; align-items: center; }
+  .masthead-nav { gap: 24px; }
+
+  .container { padding: 0 24px; }
+
+  .hero { padding: 72px 0 56px; }
+  .hero-name { font-size: 3rem; }
+  .hero-tagline { font-size: 1.1rem; }
+
+  .section { padding: 56px 0; }
+
+  .currently-list li {
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 22px 0;
+  }
+  .currently-name { font-size: 1.3rem; }
+
+  .note-title { font-size: 1.4rem; }
+  .note-link:hover { padding-left: 0; }
+
+  .essay { padding: 56px 0 80px; }
+  .essay-header { margin-bottom: 40px; padding-bottom: 32px; }
+  .essay-body p { font-size: 1.05rem; }
+  .essay-body blockquote { font-size: 1.2rem; padding-left: 16px; }
+
+  .contact-links { gap: 20px; flex-wrap: wrap; }
+
+  .colophon-inner { flex-direction: column; text-align: center; }
+}
