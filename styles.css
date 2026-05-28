@@ -462,8 +462,8 @@ body {
 
 .essay-signature img {
   display: block;
-  width: 220px;
-  max-width: 70%;
+  width: 150px;
+  max-width: 60%;
   height: auto;
   margin: 0 auto;
 }
@@ -480,7 +480,7 @@ body {
 }
 
 @media (max-width: 720px) {
-  .essay-signature img { width: 180px; }
+  .essay-signature img { width: 120px; }
 }
 
 /* ─── Page header (for notes index, about, contact) ─────── */
